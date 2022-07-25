@@ -1,0 +1,71 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: {{ include "yurt-app-manager.fullname" . }}
+webhooks:
+- clientConfig:
+    caBundle: Cg==
+    service:
+      name: {{ include "yurt-app-manager.fullname" . }}
+      namespace: {{ .Release.Namespace }}
+      port: {{ .Values.service.port }}
+      path: /mutate-apps-openyurt-io-v1alpha1-nodepool
+  admissionReviewVersions:
+  - v1
+  sideEffects: None
+  failurePolicy: Fail
+  name: mnodepool.kb.io
+  rules:
+  - apiGroups:
+    - apps.openyurt.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - nodepools
+- clientConfig:
+    caBundle: Cg==
+    service:
+      name: {{ include "yurt-app-manager.fullname" . }}
+      namespace: {{ .Release.Namespace }}
+      port: {{ .Values.service.port }}
+      path: /mutate-apps-openyurt-io-v1alpha1-yurtappset
+  admissionReviewVersions:
+  - v1
+  sideEffects: None
+  failurePolicy: Fail
+  name: myurtappset.kb.io
+  rules:
+  - apiGroups:
+    - apps.openyurt.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - yurtappsets
+- clientConfig:
+    caBundle: Cg==
+    service:
+      name: {{ include "yurt-app-manager.fullname" . }}
+      namespace: {{ .Release.Namespace }}
+      port: {{ .Values.service.port }}
+      path: /mutate-apps-openyurt-io-v1alpha1-yurtappdaemon
+  admissionReviewVersions:
+  - v1
+  sideEffects: None
+  failurePolicy: Fail
+  name: myurtappdaemon.kb.io
+  rules:
+  - apiGroups:
+    - apps.openyurt.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - yurtappdaemons

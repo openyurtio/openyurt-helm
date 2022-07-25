@@ -1,0 +1,191 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: yurtingresses.apps.openyurt.io
+spec:
+  group: apps.openyurt.io
+  names:
+    categories:
+    - all
+    kind: YurtIngress
+    listKind: YurtIngressList
+    plural: yurtingresses
+    shortNames:
+    - ying
+    singular: yurtingress
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - description: The nginx ingress controller replicas per pool
+      jsonPath: .status.ingress_controller_replicas_per_pool
+      name: Replicas-Per-Pool
+      type: integer
+    - description: The number of pools on which ingress is enabled
+      jsonPath: .status.readyNum
+      name: ReadyNum
+      type: integer
+    - description: The number of pools on which ingress is enabling or enable failed
+      jsonPath: .status.unreadyNum
+      name: NotReadyNum
+      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: YurtIngress is the Schema for the yurtingresses API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: YurtIngressSpec defines the desired state of YurtIngress
+            properties:
+              ingress_controller_image:
+                description: Indicates the ingress controller image url.
+                type: string
+              ingress_controller_replicas_per_pool:
+                description: Indicates the number of the ingress controllers to be
+                  deployed under all the specified nodepools.
+                format: int32
+                type: integer
+              ingress_webhook_certgen_image:
+                description: Indicates the ingress webhook image url.
+                type: string
+              pools:
+                description: Indicates all the nodepools on which to enable ingress.
+                items:
+                  description: IngressPool defines the details of a Pool for ingress
+                  properties:
+                    ingress_ips:
+                      description: IngressIPs is a list of IP addresses for which
+                        nodes will also accept traffic for this service.
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      description: Indicates the pool name.
+                      type: string
+                  required:
+                  - name
+                  type: object
+                type: array
+            type: object
+          status:
+            description: YurtIngressStatus defines the observed state of YurtIngress
+            properties:
+              conditions:
+                description: Indicates all the nodepools on which to enable ingress.
+                properties:
+                  ingressreadypools:
+                    description: Indicates the pools that ingress controller is deployed
+                      successfully.
+                    items:
+                      description: IngressPool defines the details of a Pool for ingress
+                      properties:
+                        ingress_ips:
+                          description: IngressIPs is a list of IP addresses for which
+                            nodes will also accept traffic for this service.
+                          items:
+                            type: string
+                          type: array
+                        name:
+                          description: Indicates the pool name.
+                          type: string
+                      required:
+                      - name
+                      type: object
+                    type: array
+                  ingressunreadypools:
+                    description: Indicates the pools that ingress controller is being
+                      deployed or deployed failed.
+                    items:
+                      description: IngressNotReadyPool defines the condition details
+                        of an ingress not ready Pool
+                      properties:
+                        pool:
+                          description: Indicates the base pool info.
+                          properties:
+                            ingress_ips:
+                              description: IngressIPs is a list of IP addresses for
+                                which nodes will also accept traffic for this service.
+                              items:
+                                type: string
+                              type: array
+                            name:
+                              description: Indicates the pool name.
+                              type: string
+                          required:
+                          - name
+                          type: object
+                        unreadyinfo:
+                          description: Info of ingress not ready condition.
+                          properties:
+                            lastTransitionTime:
+                              description: Last time the condition transitioned from
+                                one status to another.
+                              format: date-time
+                              type: string
+                            message:
+                              description: A human readable message indicating details
+                                about the transition.
+                              type: string
+                            reason:
+                              description: The reason for the condition's last transition.
+                              type: string
+                            type:
+                              description: Type of ingress not ready condition.
+                              type: string
+                          type: object
+                      required:
+                      - pool
+                      type: object
+                    type: array
+                type: object
+              ingress_controller_image:
+                description: Indicates the ingress controller image url.
+                type: string
+              ingress_controller_replicas_per_pool:
+                description: Indicates the number of the ingress controllers deployed
+                  under all the specified nodepools.
+                format: int32
+                type: integer
+              ingress_webhook_certgen_image:
+                description: Indicates the ingress webhook image url.
+                type: string
+              readyNum:
+                description: Total number of ready pools on which ingress is enabled.
+                format: int32
+                type: integer
+              unreadyNum:
+                description: Total number of unready pools on which ingress is enabling
+                  or enable failed.
+                format: int32
+                type: integer
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

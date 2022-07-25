@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "yurt-app-manager.fullname" . }}
+spec:
+  {{- with .Values.service.type }}
+  type: {{ . }}
+  {{- end }}
+  ports:
+    - name: webhook-server
+      port: {{ .Values.service.port }}
+      protocol: TCP
+      targetPort: webhook-server
+  selector:
+    {{- include "yurt-app-manager.selectorLabels" . | nindent 4 }}
