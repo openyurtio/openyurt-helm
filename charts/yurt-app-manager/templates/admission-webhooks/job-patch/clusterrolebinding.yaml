@@ -1,0 +1,20 @@
+{{- if and .Values.admissionWebhooks.enabled .Values.admissionWebhooks.patch.enabled (not .Values.admissionWebhooks.certManager.enabled) }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name:  {{ template "yurt-app-manager.fullname" . }}-admission
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+  labels:
+    app: {{ template "yurt-app-manager.name" . }}-admission
+    {{- include "yurt-app-manager.labels" . | nindent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ template "yurt-app-manager.fullname" . }}-admission
+subjects:
+  - kind: ServiceAccount
+    name: {{ template "yurt-app-manager.fullname" . }}-admission
+    namespace: {{ .Release.Namespace }}
+{{- end }}

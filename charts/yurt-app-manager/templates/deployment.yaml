@@ -36,14 +36,14 @@ spec:
             - --v=4
           ports:
             - name: webhook-server
-              containerPort: {{ .Values.webhook.port }}
+              containerPort: {{ .Values.admissionWebhooks.service.port }}
               protocol: TCP
             - name: health
               containerPort: 8000
               protocol: TCP
           env:
             - name: WEBHOOK_PORT
-              value: {{ .Values.webhook.port | quote }}
+              value: {{ .Values.admissionWebhooks.service.port | quote }}
             - name: SECRET_NAME
               value: {{ include "yurt-app-manager.fullname" . | quote }}
             - name: SERVICE_NAME
@@ -57,12 +57,11 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
             - name: WEBHOOK_CERT_DIR
-              value: {{ .Values.webhook.certDir | quote }}
+              value: {{ .Values.admissionWebhooks.certificate.mountPath | quote }}
           livenessProbe:
             httpGet:
               path: /healthz
-              port: webhook-server
-              scheme: HTTPS
+              port: health
             initialDelaySeconds: 5
             periodSeconds: 10
           readinessProbe:
@@ -72,7 +71,7 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
           volumeMounts:
-            - mountPath: {{ .Values.webhook.certDir }}
+            - mountPath: {{ .Values.admissionWebhooks.certificate.mountPath }}
               name: cert
               readOnly: true
           resources:
@@ -96,4 +95,4 @@ spec:
       - name: cert
         secret:
           defaultMode: 420
-          secretName: {{ include "yurt-app-manager.fullname" . }}
+          secretName: {{ template "yurt-app-manager.fullname" . }}-admission

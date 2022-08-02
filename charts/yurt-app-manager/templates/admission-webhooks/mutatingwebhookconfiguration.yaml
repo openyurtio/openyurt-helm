@@ -6,9 +6,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /mutate-apps-openyurt-io-v1alpha1-nodepool
   admissionReviewVersions:
   - v1
@@ -28,9 +27,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /mutate-apps-openyurt-io-v1alpha1-yurtappset
   admissionReviewVersions:
   - v1
@@ -50,9 +48,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /mutate-apps-openyurt-io-v1alpha1-yurtappdaemon
   admissionReviewVersions:
   - v1

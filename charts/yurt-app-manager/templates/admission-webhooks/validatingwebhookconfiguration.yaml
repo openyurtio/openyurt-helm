@@ -6,9 +6,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /validate-apps-openyurt-io-v1alpha1-nodepool
   admissionReviewVersions:
   - v1
@@ -29,9 +28,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /validate-apps-openyurt-io-v1alpha1-yurtappset
   admissionReviewVersions:
   - v1
@@ -51,9 +49,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /validate-apps-openyurt-io-v1alpha1-yurtappdaemon
   admissionReviewVersions:
   - v1
@@ -73,9 +70,8 @@ webhooks:
 - clientConfig:
     caBundle: Cg==
     service:
-      name: {{ include "yurt-app-manager.fullname" . }}
+      name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
-      port: {{ .Values.service.port }}
       path: /validate-apps-openyurt-io-v1alpha1-yurtingress
   admissionReviewVersions:
   - v1
