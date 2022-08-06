@@ -1,4 +1,5 @@
 # openyurt-helm
+
 OpenYurt components helm charts
 
 [![Version](https://img.shields.io/badge/OpenYurt-v0.7.0-orange)](CHANGELOG.md)
@@ -17,12 +18,17 @@ Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 Once Helm is set up properly, add the repo as follows:
 
 ```console
-helm repo add openyurt-helm https://github.com/openyurtio/openyurt-helm
+helm repo add openyurt https://openyurtio.github.io/openyurt-helm
 ```
 
-You can then run `helm search repo openyurt-helm` to see the charts.
+You can then run `helm search repo openyurt` to see the charts.
+
+Install `yurt-app-manager` use command as follows:
+
+```shell
+helm upgrade --install yurt-app-manager openyurt/yurt-app-manager
+```
 
 ## Contributing
 
-The source code of all [Opneyurt](https://openyurt.io) community [Helm](https://helm.sh) charts can be found on Github: <https://github.com/openyurtio/openyurt-helm>
-
+The source code of all [OpenYurt](https://openyurt.io) community [Helm](https://helm.sh) charts can be found on Github: <https://github.com/openyurtio/openyurt-helm>

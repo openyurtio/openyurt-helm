@@ -6,3 +6,5 @@
 
 /charts/ @rambohe-ch
 /charts/yurt-controller-manager/ @rambohe-ch
+/charts/openyurt/ @rambohe-ch
+/charts/yurt-app-manager/ @huiwq1990
