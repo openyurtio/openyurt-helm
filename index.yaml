@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  yurt-app-manager:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-08-06T05:29:33.769588672Z"
+    description: The controller manager that contains the nodepool controller and
+      yurtappset controller.
+    digest: 8d08c07fb5e08a7178c2e6caa0f0d5a84de3e4ae5d6ba96f6e6d558cdbfa42db
+    name: yurt-app-manager
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-app-manager-0.1.0/yurt-app-manager-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-08-06T05:29:33.769593872Z"
