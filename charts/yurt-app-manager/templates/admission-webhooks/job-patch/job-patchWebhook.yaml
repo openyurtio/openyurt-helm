@@ -36,6 +36,7 @@ spec:
             - --namespace={{ .Release.Namespace }}
             - --secret-name={{ template "yurt-app-manager.fullname" . }}-admission
             - --patch-failure-policy={{ .Values.admissionWebhooks.failurePolicy }}
+            - --crds={"name":"nodepools.apps.openyurt.io","conversion":{"strategy":"Webhook","webhook":{"clientConfig":{"service":{"name":"{{ template "yurt-app-manager.name" . }}-webhook","namespace":"{{ .Release.Namespace }}","path":"/convert","port":443}},"conversionReviewVersions":["v1beta1","v1alpha1"]}}}
             - --patch-mutating=true
             - --patch-validating=true
             - --log-level=trace
