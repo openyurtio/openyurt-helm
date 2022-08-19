@@ -30,6 +30,27 @@ webhooks:
     service:
       name: {{ template "yurt-app-manager.name" . }}-webhook
       namespace: {{ .Release.Namespace }}
+      path: /validate-apps-openyurt-io-v1alpha1-uniteddeployment
+  admissionReviewVersions:
+  - v1
+  sideEffects: None
+  failurePolicy: Fail
+  name: vuniteddeployment.kb.io
+  rules:
+  - apiGroups:
+    - apps.openyurt.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - uniteddeployments
+- clientConfig:
+    caBundle: Cg==
+    service:
+      name: {{ template "yurt-app-manager.name" . }}-webhook
+      namespace: {{ .Release.Namespace }}
       path: /validate-apps-openyurt-io-v1alpha1-yurtappset
   admissionReviewVersions:
   - v1
