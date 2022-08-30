@@ -34,4 +34,15 @@ entries:
     urls:
     - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-app-manager-0.1.0/yurt-app-manager-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-19T03:47:01.774057581Z"
+  yurt-dashboard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-08-30T02:35:59.3656437Z"
+    description: Dashboard for openyurt
+    digest: 26212082d66f3e5f15e007976817a44adb96b5a47ca6bad4b24d46316915c05d
+    name: yurt-dashboard
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-dashboard-0.1.0/yurt-dashboard-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-08-30T02:35:59.3656555Z"
