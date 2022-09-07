@@ -7,6 +7,7 @@ on:
 
 jobs:
   release:
+    if: github.repository == 'openyurtio/openyurt-helm'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
