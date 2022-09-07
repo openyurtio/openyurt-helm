@@ -23,10 +23,22 @@ helm repo add openyurt https://openyurtio.github.io/openyurt-helm
 
 You can then run `helm search repo openyurt` to see the charts.
 
-Install `yurt-app-manager` use command as follows:
+### Install `openyurt`
 
 ```shell
-helm upgrade --install yurt-app-manager openyurt/yurt-app-manager
+helm upgrade --install openyurt -n kube-system openyurt/openyurt
+```
+
+### Install `yurt-app-manager`
+
+```shell
+helm upgrade --install yurt-app-manager -n kube-system openyurt/yurt-app-manager
+```
+
+### Install `yurt-dashboard`
+
+```shell
+helm upgrade --install yurt-dashboard -n kube-system openyurt/yurt-dashboard
 ```
 
 ## Contributing
