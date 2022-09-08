@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   openyurt:
   - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-08T02:15:28.968327801Z"
+    description: A Helm chart for openyurt
+    digest: fcc5f59f7cd060be0f651f3a3677fe10a2cd586f731d1a7681e800937f002ad5
+    name: openyurt
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/openyurt-1.0.0/openyurt-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     appVersion: 0.7.0
     created: "2022-08-31T06:45:23.501354608Z"
     description: A Helm chart for openyurt
@@ -56,4 +66,4 @@ entries:
     urls:
     - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-dashboard-0.1.0/yurt-dashboard-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-31T06:45:23.501367508Z"
+generated: "2022-09-08T02:15:28.968348801Z"
