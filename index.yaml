@@ -78,6 +78,16 @@ entries:
     version: 0.1.0
   yurt-dashboard:
   - apiVersion: v2
+    appVersion: 0.7.0
+    created: "2022-09-16T03:22:17.455640761Z"
+    description: Dashboard for openyurt
+    digest: 2f34aa520098fe3fb91c9e9fb3e2c9230ed74c684bc7a2afb94f333c242f9daa
+    name: yurt-dashboard
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-dashboard-0.1.1/yurt-dashboard-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2022-08-30T02:35:59.3656437Z"
     description: Dashboard for openyurt
@@ -87,4 +97,4 @@ entries:
     urls:
     - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-dashboard-0.1.0/yurt-dashboard-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-15T12:27:02.018418409Z"
+generated: "2022-09-16T03:22:17.455661761Z"
