@@ -29,6 +29,7 @@ yurtTunnelServer:
   tolerations: []
   parameters:
     certDnsNames: ""
+    tunnelAgentConnectPort: 10262
     certIps: ""
   image:
     registry: docker.io
