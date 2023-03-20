@@ -41,6 +41,12 @@ helm upgrade --install yurt-app-manager -n kube-system openyurt/yurt-app-manager
 helm upgrade --install yurt-dashboard -n kube-system openyurt/yurt-dashboard
 ```
 
+### Install `raven-agent`
+
+```shell
+helm upgrade --install raven-agent -n kube-system openyurt/raven-agent
+```
+
 ## Contributing
 
 The source code of all [OpenYurt](https://openyurt.io) community [Helm](https://helm.sh) charts can be found on Github: <https://github.com/openyurtio/openyurt-helm>
