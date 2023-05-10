@@ -2,11 +2,9 @@
 
 OpenYurt components helm charts
 
-[![Version](https://img.shields.io/badge/OpenYurt-v0.7.0-orange)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/OpenYurt-v1.3.0-orange)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Go Report Card](https://goreportcard.com/badge/github.com/openyurtio/openyurt)](https://goreportcard.com/report/github.com/openyurtio/openyurt)
-
-</div>
 
 This functionality is in beta and is subject to change. The code is provided as-is with no warranties. Beta features are not subject to the support SLA of official GA features.
 
@@ -23,16 +21,16 @@ helm repo add openyurt https://openyurtio.github.io/openyurt-helm
 
 You can then run `helm search repo openyurt` to see the charts.
 
-### Install `openyurt`
+### Install `yurt-manager`
 
 ```shell
-helm upgrade --install openyurt -n kube-system openyurt/openyurt
+helm upgrade --install yurt-manager -n kube-system openyurt/yurt-manager
 ```
 
-### Install `yurt-app-manager`
+### Install `yurthub`
 
 ```shell
-helm upgrade --install yurt-app-manager -n kube-system openyurt/yurt-app-manager
+helm upgrade --install yurthub -n kube-system openyurt/yurthub
 ```
 
 ### Install `yurt-dashboard`
