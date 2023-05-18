@@ -64,6 +64,16 @@ entries:
   pool-coordinator:
   - apiVersion: v2
     appVersion: 1.3.0
+    created: "2023-05-18T07:45:49.265753777Z"
+    description: A Helm chart for OpenYurt pool-coordinator component
+    digest: 9f4122cfbe082eff58c839dc337a64e7f4b8f58c92543d2f4c43d924ff99423b
+    name: pool-coordinator
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/pool-coordinator-1.3.1/pool-coordinator-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
+    appVersion: 1.3.0
     created: "2023-05-10T03:50:19.653051858Z"
     description: A Helm chart for OpenYurt pool-coordinator component
     digest: c7add90069d1a5f83300f1404b918fcbb9b806758effce18d11685525d1b673f
@@ -152,6 +162,16 @@ entries:
   yurt-manager:
   - apiVersion: v2
     appVersion: 1.3.0
+    created: "2023-05-18T07:45:49.444987988Z"
+    description: A Helm chart for OpenYurt yurt-manager component.
+    digest: bc9328d12d7b8f0871cb5369ba85acc19b65284a73cc3dd14cd7ef363d96f2a8
+    name: yurt-manager
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-manager-1.3.1/yurt-manager-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
+    appVersion: 1.3.0
     created: "2023-05-10T03:50:20.010530334Z"
     description: A Helm chart for OpenYurt yurt-manager component.
     digest: 97a844cc5abbc4a94da4d5991b61bd24d56ec0a20a662dea3f5b6cebb41963f4
@@ -163,6 +183,16 @@ entries:
   yurthub:
   - apiVersion: v2
     appVersion: 1.3.0
+    created: "2023-05-18T07:45:49.622396517Z"
+    description: A Helm chart for OpenYurt YurtHub Component
+    digest: 387a2cb53a67505973c4127100326da297911dbeda4d51be8d13a649c554393c
+    name: yurthub
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurthub-1.3.1/yurthub-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
+    appVersion: 1.3.0
     created: "2023-05-10T03:50:20.177405837Z"
     description: A Helm chart for OpenYurt YurtHub Component
     digest: cf58a4041d11e452cebce5850a9cf2c7680400f7a443061efefae318aa46c900
@@ -171,4 +201,4 @@ entries:
     urls:
     - https://github.com/openyurtio/openyurt-helm/releases/download/yurthub-1.3.0/yurthub-1.3.0.tgz
     version: 1.3.0
-generated: "2023-05-10T03:50:20.177443537Z"
+generated: "2023-05-18T07:45:49.622513822Z"
