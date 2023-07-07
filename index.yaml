@@ -140,6 +140,16 @@ entries:
     version: 0.1.0
   yurt-coordinator:
   - apiVersion: v2
+    appVersion: 1.3.4
+    created: "2023-07-07T08:32:58.628448201Z"
+    description: A Helm chart for OpenYurt yurt-coordinator component
+    digest: 2765441f923f5505397867b5b5ba64cfaaf11cfaf37693b10751e605d05c3bde
+    name: yurt-coordinator
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-coordinator-1.3.4/yurt-coordinator-1.3.4.tgz
+    version: 1.3.4
+  - apiVersion: v2
     appVersion: 1.3.2
     created: "2023-06-21T06:36:57.708221237Z"
     description: A Helm chart for OpenYurt yurt-coordinator component
@@ -172,6 +182,16 @@ entries:
     version: 0.1.0
   yurt-manager:
   - apiVersion: v2
+    appVersion: 1.3.4
+    created: "2023-07-07T08:32:58.792969883Z"
+    description: A Helm chart for OpenYurt yurt-manager component.
+    digest: b3b8556667bf0e661ea2d112522e2a8072132c12a4f620d050c56d01668737d3
+    name: yurt-manager
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-manager-1.3.4/yurt-manager-1.3.4.tgz
+    version: 1.3.4
+  - apiVersion: v2
     appVersion: 1.3.2
     created: "2023-06-21T06:36:57.854908928Z"
     description: A Helm chart for OpenYurt yurt-manager component.
@@ -203,6 +223,16 @@ entries:
     version: 1.3.0
   yurthub:
   - apiVersion: v2
+    appVersion: 1.3.4
+    created: "2023-07-07T08:32:58.923204201Z"
+    description: A Helm chart for OpenYurt YurtHub Component
+    digest: ee50e61d0be9458fcf5d648873ae6a638b2490d59e910a06c57c32d8b330a817
+    name: yurthub
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurthub-1.3.4/yurthub-1.3.4.tgz
+    version: 1.3.4
+  - apiVersion: v2
     appVersion: 1.3.2
     created: "2023-06-21T06:36:57.999844574Z"
     description: A Helm chart for OpenYurt YurtHub Component
@@ -232,4 +262,4 @@ entries:
     urls:
     - https://github.com/openyurtio/openyurt-helm/releases/download/yurthub-1.3.0/yurthub-1.3.0.tgz
     version: 1.3.0
-generated: "2023-06-21T06:36:57.999884075Z"
+generated: "2023-07-07T08:32:58.923257802Z"
