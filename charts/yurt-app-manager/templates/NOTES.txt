@@ -1,0 +1,6 @@
+This application contains 4 CRD/controllers: NodePool, YurtAppSet, YurtAppDaemon and YurtIngress.
+
+The NodePool provides a convenient management experience for a pool of nodes within the same region or site.
+The YurtAppSet defines a new edge application management methodology of using per node pool workload.
+The YurtAppDaemon provides a similar K8S DaemonSet support for user app workload from the NodePool level.
+The YurtIngress is responsible to deploy configurable ingress controller to the user specified NodePools.
