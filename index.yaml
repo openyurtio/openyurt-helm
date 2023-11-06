@@ -193,6 +193,16 @@ entries:
   yurt-manager:
   - apiVersion: v2
     appVersion: 1.4.0
+    created: "2023-11-06T08:18:27.044473403Z"
+    description: A Helm chart for OpenYurt yurt-manager component.
+    digest: 566da6dfe3b75a603cab162ae8a79407852091abe0ac93b10291e9390cc28357
+    name: yurt-manager
+    type: application
+    urls:
+    - https://github.com/openyurtio/openyurt-helm/releases/download/yurt-manager-1.4.1/yurt-manager-1.4.1.tgz
+    version: 1.4.1
+  - apiVersion: v2
+    appVersion: 1.4.0
     created: "2023-10-27T07:22:36.410174337Z"
     description: A Helm chart for OpenYurt yurt-manager component.
     digest: e5d57f21fe511eb4134fbd657e2be1d162c6c4353a147dd57577132c3b034b97
@@ -292,4 +302,4 @@ entries:
     urls:
     - https://github.com/openyurtio/openyurt-helm/releases/download/yurthub-1.3.0/yurthub-1.3.0.tgz
     version: 1.3.0
-generated: "2023-10-27T07:22:36.541202647Z"
+generated: "2023-11-06T08:18:27.044712118Z"
