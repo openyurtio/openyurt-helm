@@ -6,7 +6,15 @@ OpenYurt components helm charts
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Go Report Card](https://goreportcard.com/badge/github.com/openyurtio/openyurt)](https://goreportcard.com/report/github.com/openyurtio/openyurt)
 
-This functionality is in beta and is subject to change. The code is provided as-is with no warranties. Beta features are not subject to the support SLA of official GA features.
+**IMPORTANT: Starting from OpenYurt v1.5.0, The following Helm charts have been relocated to the [openyurtio/charts](https://github.com/openyurtio/charts) repository.**
+
+- yurt-manager
+- yurthub
+- yurt-iot-dock
+- yurt-coordinator
+- raven-agent
+
+We recommend that end users obtain these Helm Charts from [openyurtio/charts](https://github.com/openyurtio/charts) repository. Please note that this repository will be archived in future releases.
 
 ## Usage
 
